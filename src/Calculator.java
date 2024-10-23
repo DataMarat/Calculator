@@ -44,22 +44,16 @@ public class Calculator {
         // Выполнение операции в зависимости от знака
         switch (operation) {
             case '+':
-                result = first_operand + second_operand;
+                result = MathOperations.add(first_operand, second_operand);
                 break;
             case '-':
-                result = first_operand - second_operand;
+                result = MathOperations.subtract(first_operand, second_operand);
                 break;
             case '*':
-                result = first_operand * second_operand;
+                result = MathOperations.multiply(first_operand, second_operand);
                 break;
             case '/':
-                // Проверка деления на ноль
-                if (second_operand != 0) {
-                    result = (float) first_operand / second_operand;
-                } else {
-                    System.out.println("Ошибка: деление на ноль.");
-                    return;
-                }
+                result = MathOperations.divide(first_operand, second_operand);
                 break;
             default:
                 // Этот код никогда не должен быть достигнут. Место для пасхалки
