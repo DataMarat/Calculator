@@ -7,7 +7,7 @@ public class Calculator {
 
         // Считывание первого числа
         System.out.println("Введите первое число:");
-        int first_operand = scanner.nextInt();
+        double first_operand = scanner.nextDouble();
 
         // Переменная для операции
         char operation = ' ';
@@ -36,10 +36,10 @@ public class Calculator {
 
         // Считывание второго числа
         System.out.println("Введите второе число:");
-        int second_operand = scanner.nextInt();
+        double second_operand = scanner.nextDouble();
 
         // Переменная для хранения результата
-        float result;
+        double result;
 
         // Выполнение операции в зависимости от знака
         switch (operation) {
