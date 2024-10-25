@@ -2,6 +2,32 @@ import java.util.Scanner;
 
 public class Calculator {
 
+    public static double compute(char operation, double first_operand, double second_operand) {
+        // Переменная для хранения результата
+        double result;
+
+        // Выполнение операции в зависимости от знака
+        switch (operation) {
+            case '+':
+                result = MathOperations.add(first_operand, second_operand);
+                break;
+            case '-':
+                result = MathOperations.subtract(first_operand, second_operand);
+                break;
+            case '*':
+                result = MathOperations.multiply(first_operand, second_operand);
+                break;
+            case '/':
+                result = MathOperations.divide(first_operand, second_operand);
+                break;
+            default:
+                // Этот код никогда не должен быть достигнут. Место для пасхалки
+                System.out.println("Ошибка: неподдерживаемая операция." + operation);
+                return 0;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -38,28 +64,8 @@ public class Calculator {
         System.out.println("Введите второе число:");
         double second_operand = scanner.nextDouble();
 
-        // Переменная для хранения результата
-        double result;
-
-        // Выполнение операции в зависимости от знака
-        switch (operation) {
-            case '+':
-                result = MathOperations.add(first_operand, second_operand);
-                break;
-            case '-':
-                result = MathOperations.subtract(first_operand, second_operand);
-                break;
-            case '*':
-                result = MathOperations.multiply(first_operand, second_operand);
-                break;
-            case '/':
-                result = MathOperations.divide(first_operand, second_operand);
-                break;
-            default:
-                // Этот код никогда не должен быть достигнут. Место для пасхалки
-                System.out.println("Ошибка: неподдерживаемая операция." + operation);
-                return;
-        }
+        // Вычисление значения
+        double result = compute(operation, first_operand, second_operand);
 
         // Вывод результата
         System.out.println("Результат: " + result);
